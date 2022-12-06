@@ -1,0 +1,225 @@
+:root {
+    --main-color1: whitesmoke;
+    --main-color2: black;
+    --main-color3: gray;
+    --accent-color1: #a7bed3;
+    --accent-color2: #904e55;
+    --accent-color3: #526760;
+    --accent-color4: #E6B69D;
+    --accent-color5: #e7c388;
+    /* f2cc8f #ffcaafd4b483 , b0d0d3 , C08497, f7af9d, f7e3af , f3eec3 , f1ffc4 , c6e2e9 , dab894*/
+}
+
+html {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin: 0; /*TODO: FIGURE OUT MARGIN VS PADDING*/
+    scroll-behavior: smooth;
+    line-height: 150%;
+    background-color: whitesmoke;
+}
+
+ul {
+    list-style: none;
+}
+
+ul li::before {
+    content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+    color: var(--accent-color3); /* Change the color */
+    font-size:x-large;
+    display: inline-block; /* Needed to add space between the bullet and the text */
+    width: 1em; /* Also needed for space (tweak if needed) */
+    margin-left: -1em; /* Also needed for space (tweak if needed) */
+  }
+
+/* The navigation bar */
+.navbar {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    overflow: hidden;
+    background-color: var(--main-color1); 
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 90%; /* Full width */
+    height: 4rem;
+    display: flex;
+    flex-wrap: wrap;
+    /*border-bottom: 1px solid var(--main-color2);*/
+}
+
+.navbar-title {
+    height: fit-content;
+}
+
+.navbar-line {
+    margin-top: -1.2rem;
+    
+    width: 95%;
+    height: 1px;
+    background-color: black;
+    line-height: 80%;
+}
+
+.navbar-item-container {
+    margin-left: auto;
+    align-self: center;
+    max-width: 70%;
+    
+}
+  
+/* Links inside the navbar */
+.navbar-item {
+
+    display: inline-block;
+    position: relative;
+    color: var(--main-color2);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 90%;
+}
+
+/* Link animation */
+
+
+
+.navbar-item::after {
+    content: '';
+    position: absolute;
+    width: 60%;
+    transform: scaleX(0);
+    height: 3px;
+    bottom: 0;
+    left: 20%; /* CHANGE */
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.navbar-item:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Change background on hover of Introduction nav item */
+#navbar-item-intro {
+    color: var(--accent-color1);
+}
+#navbar-item-intro::after {
+    background-color: var(--accent-color1);
+}
+
+
+
+/* Change background on hover of p1 nav item */
+#navbar-item-p1 {
+    color: var(--accent-color2);
+}
+
+#navbar-item-p1::after {
+    background-color: var(--accent-color2);
+}
+
+#navbar-item-p2 {
+    color: var(--accent-color3);
+}
+
+#navbar-item-p2::after {
+    background-color: var(--accent-color3);
+}
+
+#navbar-item-p3 {
+    color: var(--accent-color4);
+}
+
+#navbar-item-p3::after {
+    background-color: var(--accent-color4);
+}
+
+#navbar-item-p4 {
+    color: var(--accent-color5);
+}
+
+#navbar-item-p4::after {
+    background-color: var(--accent-color5);
+}
+
+p{
+    font-size:x-large;
+}
+
+
+/* Main content */
+.main {
+    width: 70%;
+    
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 5%;
+}
+
+.main-sections {
+    padding-top: 10%;
+}
+
+#main-section-intro-header {
+    color: var(--accent-color1)
+}
+#main-section-p1-header {
+    color: var(--accent-color2)
+}
+#main-section-p2-header {
+    color: var(--accent-color3)
+}
+#main-section-p3-header {
+    color: var(--accent-color4)
+}
+#main-section-p4-header {
+    color: var(--accent-color5)
+}
+
+.main-p1-sketching-container {
+    display: block;
+    margin-bottom: 2%;
+}
+
+.main-p1-sketching-image-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-p1-sketching-image {
+    width: 30%;
+}
+
+.main-p1-sketching-name-container {
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    margin: 0;
+}
+
+@media screen and (max-width: 1400px) {
+
+
+    #title-span {
+        display: none;
+    }
+
+    .navbar-item {
+        font-size: 70%;
+    }
+}
+
+@media screen and (max-width: 960px) {
+
+    .navbar-item-container {
+        display: none;
+    }
+}

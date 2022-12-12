@@ -18,9 +18,21 @@ html {
     background-color: whitesmoke;
 }
 
-img{
-    width: 500px;
+.personas-img{
+    width: auto;
+    height: 300px;
+}
+
+.home-img{
+    width: auto;
     height: 400px;
+    border: 2px solid gray;
+    border-radius: 5px;
+}
+
+.studio-img{
+    width: auto;
+    height: 500px;
 }
 
 ul {
